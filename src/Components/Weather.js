@@ -5,7 +5,7 @@ const Weather = () => {
   const [search, setSearch] = useState("Jaunpur");
   useEffect(() => {
     const fetchApi = async () => {
-      const q=process.env.REACT_APP_API_KEY;
+      const q = process.env.REACT_APP_API_KEY;
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${q}`
       const response = await fetch(url);
       const resjson = await response.json();
