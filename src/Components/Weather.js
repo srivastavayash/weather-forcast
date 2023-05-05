@@ -5,14 +5,15 @@ const Weather = () => {
   const [search, setSearch] = useState("Jaunpur");
   useEffect(() => {
     const fetchApi = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=c04dbb8ddaaafabb568c21571e0fd146`
+      const q=process.env.REACT_APP_API_KEY;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${q}`
       const response = await fetch(url);
       const resjson = await response.json();
       // console.log(resjson)
       setCity(resjson.main);
     };
     fetchApi();
-  },[search])
+  }, [search])
   return (
     <div className='Container'>
       <div className='Search'>
@@ -20,7 +21,7 @@ const Weather = () => {
           setSearch(event.target.value)
         }} />
       </div>
-      {!city?(<div className='errormsg'><h1><b> Data Not Found !</b></h1></div>):(<div className='info'>
+      {!city ? (<div className='errormsg'><h1><b> Data Not Found !</b></h1></div>) : (<div className='info'>
         <h2>
           <i className="fa-solid fa-location-dot"></i> {search}
         </h2>
