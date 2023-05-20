@@ -1,1 +1,2 @@
 creating weather forcasting website.	
+creating figma design for the weather app.
