@@ -1,2 +1,2 @@
-creating weather forcasting website.	
+creating weather forcast app in reactjs with great ui.
 creating figma design for the weather app.
