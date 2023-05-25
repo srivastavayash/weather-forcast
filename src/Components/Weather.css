@@ -7,12 +7,12 @@ body {
     margin-right: 0px;
     background-color: rgb(39, 39, 37);
     background-image: url(weather.jpg);
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
 .Container {
     margin-top: 0px;
-    padding-top:30px;
+    padding-top: 30px;
     padding-bottom: 20px;
     margin-left: 0px;
     margin-right: 280px;
@@ -21,11 +21,12 @@ body {
     backdrop-filter: blur(8px);
     color: rgb(195, 191, 191);
 }
-input[type=search]{
+
+input[type=search] {
     border: 2px solid;
     border-radius: 20px;
     background-color: rgb(195, 191, 191);
-    box-shadow: 23px 10px 20px 1px red ;
+    box-shadow: 23px 10px 20px 1px red;
     text-indent: 67px;
     height: 35px;
     color: rgb(82, 18, 5);
