@@ -1,35 +1,72 @@
+html, body {
+    overflow: hidden;
+  }
+  
+.container {
+  overflow: hidden;
+}
 body {
-    margin-top: 0px;
-    padding-top: 189px;
-    padding-right: 476px;
-    padding-left: 33px;
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: rgb(39, 39, 37);
-    background-image: url(weather.jpg);
+    background-image: url('./bg.jpg');
+    background-size: cover;
+    height: 640px;
     background-repeat: no-repeat;
-}
-
-.Container {
-    margin-top: 0px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    margin-left: 0px;
-    margin-right: 280px;
-    margin-bottom: 20px;
-    border-radius: 30px;
-    backdrop-filter: blur(8px);
-    color: rgb(195, 191, 191);
-}
-
-input[type=search] {
-    border: 2px solid;
-    border-radius: 20px;
-    background-color: rgb(195, 191, 191);
-    box-shadow: 23px 10px 20px 1px red;
-    text-indent: 67px;
-    height: 35px;
-    color: rgb(82, 18, 5);
-    font-weight: bold;
+    background-position: center;
     font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+.Search {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin:8px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .Search input[type="search"] {
+    flex: 1;
+    margin-left: 100px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  .Search input[type="search"]::placeholder {
+    color: #999;
+  }
+  
+  
+.one {
+    border:0.5px solid black;
+    border-radius: 12px;
+    margin:8px 767px 122px 2px;
+    padding-top:12px;
+    color: rgb(255, 255, 255);
+   backdrop-filter: blur(10px) !important;
+   width:264px;
+   height: 187px;
+   
+}
+
+.two {
+    border:0.5px solid black;
+    border-radius: 12px;
+    margin: -311px 0px 0px 1120px;
+    font-weight: bold;
+    padding-top: 25px;
+    height: 390px;
+    width: 214px;
+    letter-spacing: 0.5px;
+    color:rgb(255, 255, 255);
+    backdrop-filter: blur(3px) !important;
+}
+
+.three {
+    padding: 0px 69px 0px 0px;
+    margin:8px 363px -114px 418px;
+    color: rgb(0, 0, 0);
 }
