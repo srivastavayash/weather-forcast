@@ -26,7 +26,7 @@ const Weather = () => {
           <i className="fa-solid fa-location-dot"></i> {search}
         </h2>
         <h1>
-          {city.temp}°C
+          {city.temp}°Celsius
         </h1>
         <h3>
           Min: {city.temp_min}°C | Max: {city.temp_max}°C
