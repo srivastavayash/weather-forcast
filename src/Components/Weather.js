@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Weather.css'
+import Corousel from './Corousel';
 const Weather = () => {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const timezoneOffset = 19800; // Time zone offset in second
@@ -71,6 +72,11 @@ const Weather = () => {
           Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()} PM
         </section>
       </div>)}
+      <section className='footer'>
+        <footer>
+          <Corousel/>
+        </footer>
+      </section>
     </div>
   )
 }

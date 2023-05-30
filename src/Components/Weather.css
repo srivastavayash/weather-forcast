@@ -27,6 +27,8 @@ body {
   
   .Search input[type="search"] {
     flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     margin-left: 100px;
     border: none;
     outline: none;
