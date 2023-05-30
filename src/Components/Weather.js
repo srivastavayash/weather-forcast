@@ -33,11 +33,11 @@ const Weather = () => {
       setSys(resjson.sys);
     };
     fetchApi();
-  }, [search])
+  }, [setSearch,search])
   return (
     <div className='Container'>
       <div className='Search'>
-        <i class="fas fa-search search-icon"></i>
+        <i className="fas fa-search search-icon"></i>
         <input type='search' value={search} onChange={(event) => {
           setSearch(event.target.value)
         }} />
@@ -46,14 +46,14 @@ const Weather = () => {
         <section className='three'><h4> {new Date(data.dt * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} | {daysOfWeek[new Date(data.dt * 1000).getDay()]}</h4>
           <h4>{localTime} {Time()}</h4></section>
         <section className='one'>
-          <i class="fa-solid fa-cloud fa-2xl" style={{ color: '#fff70f' }}></i>
+          <i className="fa-solid fa-cloud fa-2xl" style={{ color: '#fff70f' }}></i>
           <h2>
             <i className="fa-solid fa-location-dot"></i> {search}, {sys.country}
           </h2>
           <h1>
           {city.temp}°Celsius({data.weather[0].description})
           </h1>
-          <i class="fa-solid fa-temperature-half"></i> <b>{city.feels_like}°C</b> </section>
+          <i className="fa-solid fa-temperature-half"></i> <b>{city.feels_like}°C</b> </section>
         <section className='two'>
           Pressure: {city.pressure}mb <br />
           <br />
