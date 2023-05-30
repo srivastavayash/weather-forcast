@@ -74,7 +74,7 @@ const Weather = () => {
       </div>)}
       <section className='footer'>
         <footer>
-          <Corousel/>
+          <Corousel data={search}/>
         </footer>
       </section>
     </div>
