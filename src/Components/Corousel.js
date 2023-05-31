@@ -1,11 +1,13 @@
 import React from 'react'
+import { useState,useEffect } from 'react';
 import Card from './Card';
 import './Card.css'
 const Corousel = (props) => {
+  const [forcast, setForcast] = useState(null);
     const name=props.data;
-    console.log(name);
+    // console.log(name);
     let cont = document.querySelector('.Cards-container');
-    console.log(cont);
+    // console.log(cont);
     const prevbtnhandler = () => {
         let width = cont.clientWidth;
         cont.scrollLeft = cont.scrollLeft - width;
@@ -14,6 +16,7 @@ const Corousel = (props) => {
         let width = cont.clientWidth;
         cont.scrollLeft = cont.scrollLeft + width;
     }
+    useEffect(() => {
     const getData = async () => {
         const api = process.env.REACT_APP_API_KEY;
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${api}`;
@@ -33,12 +36,15 @@ const Corousel = (props) => {
         try {
           let res = await fetch(url);
           let data = await res.json();
-          console.log("data", data);
+          // console.log("data", data); 
+          setForcast(data);
         } catch (error) {
           console.log(error);
         }
       };
       getData();
+    },[name])
+    console.log(forcast);
     return (
         <div className='Courousel-container'>
             <button className='prev' onClick={prevbtnhandler}><p>&lt;</p></button>
