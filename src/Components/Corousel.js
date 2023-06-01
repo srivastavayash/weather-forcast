@@ -3,7 +3,8 @@ import { useState,useEffect } from 'react';
 import Card from './Card';
 import './Card.css'
 const Corousel = (props) => {
-  const [forcast, setForcast] = useState(null);
+  // const [forcast, setForcast] = useState(null);
+  const [list,setList]=useState(null);
     const name=props.data;
     // console.log(name);
     let cont = document.querySelector('.Cards-container');
@@ -37,15 +38,16 @@ const Corousel = (props) => {
           let res = await fetch(url);
           let data = await res.json();
           // console.log("data", data); 
-          setForcast(data);
+          // setForcast(data);
+          setList(data.list[0].dt_txt); 
         } catch (error) {
           console.log(error);
         }
       };
       getData();
     },[name])
-    console.log(forcast);
-    return (
+    console.log(list);
+   return (
         <div className='Courousel-container'>
             <button className='prev' onClick={prevbtnhandler}><p>&lt;</p></button>
             <button className='next' onClick={nextbtnhandler}><p>&gt;</p></button>
