@@ -19,7 +19,10 @@ const Card = (props) => {
 
   return (
     <div className='single-card'><h3>{props.data} {val} </h3>
+    <p>Clear Sky</p>
+    <p>Feels_like</p>
     </div>
+
   )
 }
 
