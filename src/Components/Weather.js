@@ -33,7 +33,7 @@ const Weather = () => {
       setSys(resjson.sys);
     };
     fetchApi();
-  }, [setSearch,search])
+  }, [setSearch, search])
   return (
     <div className='Container'>
       <div className='Search'>
@@ -51,7 +51,7 @@ const Weather = () => {
             <i className="fa-solid fa-location-dot"></i> {search}, {sys.country}
           </h2>
           <h1>
-          {city.temp}°Celsius({data.weather[0].description})
+            {city.temp}°Celsius({data.weather[0].description})
           </h1>
           <i className="fa-solid fa-temperature-half"></i> <b>{city.feels_like}°C</b> </section>
         <section className='two'>
@@ -74,7 +74,7 @@ const Weather = () => {
       </div>)}
       <section className='footer'>
         <footer>
-          <Corousel data={search}/>
+          <Corousel data={search} />
         </footer>
       </section>
     </div>
