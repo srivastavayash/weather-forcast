@@ -6,7 +6,8 @@ const Corousel = (props) => {
   const [forcast, setForcast] = useState([]);
   // const [list,setList]=useState(null);
   const [time, setTime] = useState(null);
-  const [standard, setStandard] = useState(null);
+  // const [standard, setStandard] = useState(null);
+  const [arrdt,SetArrdt]=useState([]);
   // const[arr,setArr]=useState([]);
   const name = props.data;
   // console.log(name);
@@ -43,29 +44,32 @@ const Corousel = (props) => {
         // console.log("data", data); 
         setForcast(data.list);
         setTime(data.list[0].dt_txt.slice(11, 19));
-        if (time[0] === "0") { setStandard("AM") }
-        else { setStandard("PM") }
+        SetArrdt(forcast.map((obj)=>{return obj.dt_txt.slice(11,19)}));
       } catch (error) {
         console.log(error);
       }
     };
     getData();
+    // eslint-disable-next-line
   }, [name,time])
   // console.log(arr);
   // console.log(standard);
+
   console.log(forcast);
+  console.log(arrdt);
   return (
     <div className='Courousel-container'>
       <button className='prev' onClick={prevbtnhandler}><p>&lt;</p></button>
       <button className='next' onClick={nextbtnhandler}><p>&gt;</p></button>
       <div className='Cards-container'>
-        <Card key='1' cardno='1' data={time} std={standard} />
-        <Card key='2' cardno='2' data={time} std={standard}/>
-        <Card key='3' cardno='3' data={time} std={standard}/>
-        <Card key='4' cardno='4' data={time} std={standard}/>
-        <Card key='5' cardno='5' data={time} std={standard}/>
-        <Card key='6' cardno='6' data={time} std={standard}/>
-        <Card key='7' cardno='7' data={time} std={standard}/>
+        <Card key='1' cardno='1' data={arrdt[0]}  />
+        <Card key='2' cardno='2' data={arrdt[1]} />
+        <Card key='3' cardno='3' data={arrdt[2]} />
+        <Card key='4' cardno='4' data={arrdt[3]} />
+        <Card key='5' cardno='5' data={arrdt[4]} />
+        <Card key='6' cardno='6' data={arrdt[5]} />
+        <Card key='7' cardno='7' data={arrdt[6]} />
+        <Card key='8' cardno='7' data={arrdt[7]} />
       </div>
     </div>
   )
