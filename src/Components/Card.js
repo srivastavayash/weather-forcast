@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import './Card.css'
 const Card = (props) => {
   const std = props.data;
+  const temp=props.temp;
+  const desc=props.desc;
   let [val, setVal] = useState(null);
   useEffect(() => {
     const fun = async () => {
@@ -19,8 +21,8 @@ const Card = (props) => {
 
   return (
     <div className='single-card'><h3>{props.data} {val} </h3>
-    <p>Clear Sky</p>
-    <p>Feels_like</p>
+    <p>{desc}</p>
+    <p>Feels_like: {temp}°Celsius</p>
     </div>
 
   )
