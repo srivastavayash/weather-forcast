@@ -27,6 +27,8 @@ body {
   
   .Search input[type="search"] {
     flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     margin-left: 100px;
     border: none;
     outline: none;
@@ -43,7 +45,7 @@ body {
 .one {
     border:0.5px solid black;
     border-radius: 12px;
-    margin:8px 767px 122px 2px;
+    margin:8px 767px 122px 20px;
     padding-top:12px;
     color: rgb(255, 255, 255);
    backdrop-filter: blur(10px) !important;

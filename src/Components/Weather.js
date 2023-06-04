@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Weather.css'
+import Corousel from './Corousel';
 const Weather = () => {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const timezoneOffset = 19800; // Time zone offset in second
@@ -26,17 +27,17 @@ const Weather = () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${q}`
       const response = await fetch(url);
       const resjson = await response.json();
-      console.log(resjson);
+      // console.log(resjson);
       setData(resjson);
       setCity(resjson.main);
       setSys(resjson.sys);
     };
     fetchApi();
-  }, [search])
+  }, [setSearch, search])
   return (
     <div className='Container'>
       <div className='Search'>
-        <i class="fas fa-search search-icon"></i>
+        <i className="fas fa-search search-icon"></i>
         <input type='search' value={search} onChange={(event) => {
           setSearch(event.target.value)
         }} />
@@ -45,14 +46,14 @@ const Weather = () => {
         <section className='three'><h4> {new Date(data.dt * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} | {daysOfWeek[new Date(data.dt * 1000).getDay()]}</h4>
           <h4>{localTime} {Time()}</h4></section>
         <section className='one'>
-          <i class="fa-solid fa-cloud fa-2xl" style={{ color: '#fff70f' }}></i>
+          <i className="fa-solid fa-cloud fa-2xl" style={{ color: '#fff70f' }}></i>
           <h2>
             <i className="fa-solid fa-location-dot"></i> {search}, {sys.country}
           </h2>
           <h1>
-          {city.temp}°Celsius({data.weather[0].description})
+            {city.temp}°Celsius({data.weather[0].description})
           </h1>
-          <i class="fa-solid fa-temperature-half"></i> <b>{city.feels_like}°C</b> </section>
+          <i className="fa-solid fa-temperature-half"></i> <b>{city.feels_like}°C</b> </section>
         <section className='two'>
           Pressure: {city.pressure}mb <br />
           <br />
@@ -71,6 +72,11 @@ const Weather = () => {
           Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()} PM
         </section>
       </div>)}
+      <section className='footer'>
+        <footer>
+          <Corousel data={search} />
+        </footer>
+      </section>
     </div>
   )
 }

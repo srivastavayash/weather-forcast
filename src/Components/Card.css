@@ -1,0 +1,51 @@
+.single-card {
+    outline: none;
+    min-width: 190px;
+    max-width: 15px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.518);
+    margin: 10px;
+    color: black;
+}
+
+.Cards-container {
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+    margin:10px;
+    /* padding: 0px 5px 0px 4px; */
+    scroll-behavior: smooth;
+}
+
+.Courousel-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.prev,
+.next {
+    border: none;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+.next {
+    right: 0px;
+}
+
+.next p,
+.prev p {
+    font-size: 30px;
+    box-shadow: 0px 0px 10px 1px white;
+    border-radius: 5px;
+    cursor: pointer;
+}
